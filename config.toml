@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "The Levee Breaks"
 theme = "typewriter"
 
+googleAnalytics = "UA-149909314-2"
   # Custom header image
   featureimage = "img/typewriter.jpg"
 
