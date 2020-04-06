@@ -1,0 +1,28 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "The Levee Breaks"
+theme = "typewriter"
+
+  # Custom header image
+  featureimage = "img/typewriter.jpg"
+
+  [params.sidebar]
+    # Optional about block for sidebar (can be Markdown)
+    about = "A place to talk about technology and things I'm distinctly passionate about. Static websites, fintech, AI, and much much more."
+
+    # How many posts to show on the sidebar (Default: 5)
+    #num_recent_posts = 2
+
+  [params.social]
+    # Optional, used for attribution in Twitter cards
+    # See: https://dev.twitter.com/cards/types/summary-large-image
+    twitter = "gerrybot"
+
+  [params.sharingicons]
+    # Hide the sharing icons on posts? (Default: false)
+    hide = false
+
+    # Optionally, set any of these to false to hide them:
+    #facebook = true
+    #linkedin = true
+    #twitter = true
