@@ -1,0 +1,23 @@
+{{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+
+<div class="blog-card">
+  <a href="{{ .Permalink }}">
+    {{ if .Params.featureimage }}
+    {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
+    {{ .Scratch.Set "gerryimg" ($original.Fill "150x150") }}
+    {{ $gerryimg := .Scratch.Get "gerryimg" }}
+    <img src="{{ $gerryimg.RelPermalink }}" >
+    {{ end }}
+  </a>
+  <div class="card-meta">
+    <h3>
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}!</a>
+    </h3>
+    <div class="entry-meta">
+        <div class="entry-meta">
+          <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name">{{ .Params.author | default .Site.Params.author }}</span></span>
+          <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
+        </div>
+    </div>
+  </div>
+</div>

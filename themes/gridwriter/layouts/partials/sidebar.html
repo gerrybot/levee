@@ -1,0 +1,51 @@
+<div id="sidebar" class="sidebar">
+  
+  {{ if isset .Site.Params.sidebar "about" }}
+  <div class="block-layout">
+  <h4>{{ i18n "about" }}</h4>
+    <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
+  </div>
+  {{ end }}
+
+
+<!-- This can be deleted soon -->
+<div class="block-layout">
+    {{ if isset .Params "author" }}
+
+      {{ $author := index .Site.Data.authors .Params.author }}
+      {{ $author.bio}}
+
+    {{ else }}
+      <p>Unknown</p>
+    {{ end }}
+</div>
+
+{{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+<div class="block-layout">
+  <h4>{{ i18n "recentPosts" }}</h4>
+  <ul>
+    {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
+      <li><a href="{{.RelPermalink}}">
+        {{.Title | markdownify }}
+      </a></li>
+    {{ end }}
+  </ul>
+</div>
+
+  {{ with .Site.Menus.sidebar }}
+  <div class="block-layout">
+    <h4>{{ i18n "links" }}</h4>
+    <ul>
+      {{ range . }}
+        <li><a href="{{ .URL | absURL }}">
+          {{ .Name }}
+        </a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+<div class="block-layout">
+  <p><a href="{{ .Permalink }}#">{{ i18n "backToTop" }}</a></p>
+</div>
+</div>

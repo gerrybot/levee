@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+  <head>
+
+    {{ partial "head-meta.html" . }}
+
+    <base href="{{ .Site.BaseURL }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    {{ "<!-- Actual SCSS Output -->" | safeHTML }}
+
+    {{ $options := (dict "targetPath" "style.css" "includePaths" (slice "scss" "_vendor")) }}
+
+    {{ $styles := resources.Get "scss/gridwriter.scss" | toCSS $options }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+    <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+
+    {{ with .OutputFormats.Get "rss" }}
+    {{ "<!-- RSS 2.0 feed -->" | safeHTML }}    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end }}
+
+
+    {{ if .Site.Params.cookie_consent_info_url }}
+      {{ partial "cookie-consent.html" . }}
+    {{ end }}
+
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ partial "head-custom.html" . }}
+
+    <script src="https://kit.fontawesome.com/f6a5e35c35.js"></script>
+  </head>
+
+<body>
+
+<div style="margin:10px auto; max-width: 900px;">
+  <div id="gridwriter">
+    <div id="gridarticle">
+      <header id="branding" role="banner">
+      {{ if ( not .IsPage ) }}
+      {{ partial "brand.html" . }}
+      {{ end }}
+
+      {{ if .Params.featureimage }}
+      {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
+      <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
+      {{ end }}
+      </header>
+      <div id="content">
+        {{ block "main" . }}
+          <!-- The part of the page that begins to differ between templates -->
+        {{ end }}
+      </div>
+    </div>
+    <div id="gridsidebar">
+      {{ if .IsPage }}
+        {{partial "brand.html" . }}
+      {{ end }}
+      {{ partial "sidebar.html" . }}
+      <p>Taxonomy Baseof</p>
+    </div>
+    <div id="gridfooter">
+      <p>
+        {{ if .Site.Copyright }}
+        {{ .Site.Copyright | markdownify }}
+        {{ else }}
+        Typewriter Theme for Hugo by <a href='https://gerardmcgarry.com'>Gerard McGarry</a>.
+        {{ end }}
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div id="page">
+    <main>
+
+
+
+
+    </main>
+  </div>
+
+  <footer id="colophon" class="blog-footer row">
+    <div class="column">
+
+    </div>
+  </footer>
+
+  </body>
+</html>

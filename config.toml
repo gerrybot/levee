@@ -1,7 +1,7 @@
 baseURL = "https://theleveebreaks.co.uk/"
 languageCode = "en-us"
 title = "The Levee Breaks"
-theme = "typewriter"
+theme = "gridwriter"
 
 googleAnalytics = "UA-149909314-2"
   # Custom header image
