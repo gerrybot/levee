@@ -2,7 +2,7 @@
 title: 'Golden Girls'
 author: gerrybot
 date: 2020-09-14
-draft: false
+draft: true
 tags: [London, Travel, 2019]
 categories: [Life]
 featureimage: golden-girls.jpg
