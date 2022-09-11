@@ -293,9 +293,27 @@ figcaption {
   padding: 0 1rem; }
 
 /* EXPERIMENTAL */
+.card-flex {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 2em; }
+  .card-flex .blog-card {
+    flex-basis: auto; }
+
+@media screen and (min-width: 600px) {
+  .card-flex {
+    flex-flow: row wrap; }
+    .card-flex .blog-card {
+      flex: 0 1 calc(50% - 1em); } }
+
+@media screen and (min-width: 800px) {
+  .card-flex .blog-card {
+    flex: 0 1 calc(33% - 1em); } }
+
 .blog-card {
   background: #fff;
-  margin: 2em;
+  margin-bottom: 2em;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -304,34 +322,53 @@ figcaption {
   -ms-border-radius: 0.5em;
   -o-border-radius: 0.5em;
   border-radius: 0.5em; }
-  .blog-card img {
+  .blog-card .card-image {
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     -webkit-border-radius: 0.5em 0.5em 0 0;
     -moz-border-radius: 0.5em 0.5em 0 0;
     -ms-border-radius: 0.5em 0.5em 0 0;
     -o-border-radius: 0.5em 0.5em 0 0;
     border-radius: 0.5em 0.5em 0 0; }
+    .blog-card .card-image a {
+      display: block;
+      height: 100%; }
   .blog-card .card-meta {
-    padding: 0 1em 0; }
+    padding: 0 1em 0;
+    text-align: center; }
     .blog-card .card-meta h3 {
       margin: .5em 0 .3em 0; }
-    .blog-card .card-meta .entry-meta {
-      padding: 0 0 .5em 0; }
 
-#gridwriter {
+.entry-meta {
+  padding: 0 0 .5em 0;
+  color: #666; }
+  .entry-meta span, .entry-meta time {
+    margin-right: .4em; }
+  .entry-meta i {
+    margin-right: .2em;
+    color: #0190AF; }
+
+#homegrid, #grid-single {
+  margin: none; }
+
+#gridwriter, #homegrid {
   background: transparent;
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: minmax(10rem, auto);
-  grid-gap: 1rem;
-  /*> div {
-		background-color: #ccc;
-	}*/ }
+  grid-gap: 1rem; }
 
 @media screen and (min-width: 800px) {
-  #gridwriter {
-    display: grid;
+  #homegrid, #grid-single {
+    margin: 10px auto;
+    max-width: 900px; }
+  #gridwriter, #homegrid {
     grid-template-columns: repeat(3, 1fr); }
-    #gridwriter #gridarticle {
-      grid-column: 1/3; }
-    #gridwriter #colophon {
-      grid-column: 1/3; } }
+  #gridwriter #gridarticle {
+    grid-column: 1/3; }
+  #gridwriter #colophon {
+    grid-column: 1/3; }
+  #homegrid #gridarticle, #homegrid #colophon {
+    grid-column: 1/4; } }

@@ -33,58 +33,34 @@
 
 <body>
 
-<div style="margin:10px auto; max-width: 900px;">
-  <div id="gridwriter">
-    <div id="gridarticle">
-      <header id="branding" role="banner">
-      {{ if ( not .IsPage ) }}
-      {{ partial "brand.html" . }}
-      {{ end }}
+<div id="homegrid">
+  <div id="gridarticle">
+    <header id="branding" role="banner">
+    {{ if ( not .IsPage ) }}
+    {{ partial "brand.html" . }}
+    {{ end }}
 
-      {{ if .Params.featureimage }}
-      {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
-      <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
+    {{ if .Params.featureimage }}
+    {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
+    <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
+    {{ end }}
+    </header>
+    <div id="content">
+      {{ block "main" . }}
+        <!-- The part of the page that begins to differ between templates -->
       {{ end }}
-      </header>
-      <div id="content">
-        {{ block "main" . }}
-          <!-- The part of the page that begins to differ between templates -->
-        {{ end }}
-      </div>
     </div>
-    <div id="gridsidebar">
-      {{ if .IsPage }}
-        {{partial "brand.html" . }}
+  </div>
+  <div id="colophon">
+    <p>
+      {{ if .Site.Copyright }}
+      {{ .Site.Copyright | markdownify }}
+      {{ else }}
+      Typewriter Theme for Hugo by <a href='https://gerardmcgarry.com'>Gerard McGarry</a> - Home Baseof.
       {{ end }}
-      {{ partial "sidebar.html" . }}
-      <p>Home Baseof</p>
-    </div>
-    <div id="gridfooter">
-      <p>
-        {{ if .Site.Copyright }}
-        {{ .Site.Copyright | markdownify }}
-        {{ else }}
-        Typewriter Theme for Hugo by <a href='https://gerardmcgarry.com'>Gerard McGarry</a>.
-        {{ end }}
-      </p>
-    </div>
+    </p>
   </div>
 </div>
-
-  <div id="page">
-    <main>
-
-
-
-
-    </main>
-  </div>
-
-  <footer id="colophon" class="blog-footer row">
-    <div class="column">
-
-    </div>
-  </footer>
 
   </body>
 </html>

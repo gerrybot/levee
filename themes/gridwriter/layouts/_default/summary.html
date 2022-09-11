@@ -1,5 +1,5 @@
 {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
-
+<!-- This is used in tag/category lists -->
 <div class="blog-card">
   <a href="{{ .Permalink }}">
     {{ if .Params.featureimage }}
@@ -9,7 +9,7 @@
   </a>
   <div class="card-meta">
     <h3>
-      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }} - Yep</a>
     </h3>
     <div class="entry-meta">
         <div class="entry-meta">

@@ -1,23 +1,22 @@
 {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
-
+<!-- This is used in homepage lists -->
 <div class="blog-card">
-  <a href="{{ .Permalink }}">
-    {{ if .Params.featureimage }}
-    {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
-    {{ .Scratch.Set "gerryimg" ($original.Fill "150x150") }}
-    {{ $gerryimg := .Scratch.Get "gerryimg" }}
-    <img src="{{ $gerryimg.RelPermalink }}" >
-    {{ end }}
-  </a>
+  {{ if .Params.featureimage }}
+  {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
+  {{ .Scratch.Set "gerryimg" ($original.Fill "300x180") }}
+  {{ $gerryimg := .Scratch.Get "gerryimg" }}
+  <div class="card-image" style="background-image:url('{{ $gerryimg.RelPermalink }}'); height:180px;">
+    <a href="{{ .Permalink }}">
+    </a>
+  </div>
+  {{ end }}
   <div class="card-meta">
     <h3>
-      <a href="{{ .Permalink }}">{{ .Title | markdownify }}!</a>
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
     </h3>
     <div class="entry-meta">
-        <div class="entry-meta">
-          <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name">{{ .Params.author | default .Site.Params.author }}</span></span>
-          <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
-        </div>
+      <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name">{{ .Params.author | default .Site.Params.author }}</span></span>
+      <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
     </div>
   </div>
 </div>

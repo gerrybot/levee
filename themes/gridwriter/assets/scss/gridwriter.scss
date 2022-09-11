@@ -259,49 +259,106 @@ figcaption {
 
 /* EXPERIMENTAL */
 
-.blog-card {
-	background: $white;
-	margin: 2em;
-	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-		-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-			box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	@include border-radius(.5em);
-	img {
-		@include border-radius(.5em .5em 0 0);
+.card-flex {
+	display:flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	padding: 2em;
+	.blog-card {
+		flex-basis:auto;
 	}
-	.card-meta {
-		padding:0 1em 0;
-		h3 {
-			margin: .5em 0 .3em 0;
-		}
-		.entry-meta {
-			padding: 0 0 .5em 0;
+}
+
+@media screen and (min-width:600px) {
+	.card-flex {
+		flex-flow: row wrap;
+		.blog-card {
+			flex: 0 1 calc(50% - 1em);
 		}
 	}
 }
 
-#gridwriter {
+@media screen and (min-width:800px) {
+	.card-flex {
+		.blog-card {
+			flex: 0 1 calc(33% - 1em);
+		}
+	}
+}
+
+.blog-card {
+	background: $white;
+	margin-bottom:2em;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+		-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	@include border-radius(.5em);
+	.card-image {
+		height:150px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		@include border-radius(.5em .5em 0 0);
+		a {
+			display:block;
+			height:100%;
+		}
+	}
+	.card-meta {
+		padding:0 1em 0;
+		text-align:center;
+		h3 {
+			margin: .5em 0 .3em 0;
+		}
+	}
+}
+
+.entry-meta {
+	padding: 0 0 .5em 0;
+	color: $darkgrey;
+	span, time {
+		margin-right:.4em;
+	}
+	i {
+		margin-right: .2em;
+		color: $primary-color;
+	}
+}
+
+#homegrid, #grid-single {
+	margin: none;
+}
+
+#gridwriter, #homegrid {
 	background: transparent;
 	display:grid;
 	grid-template-columns: 1fr;
 	grid-auto-rows: minmax(10rem, auto);
 	grid-gap: 1rem;
-	/*> div {
-		background-color: #ccc;
-	}*/
 }
 
 @media screen and (min-width:800px) {
-	#gridwriter {
-		display:grid;
-		grid-template-columns: repeat(3, 1fr);
+	#homegrid, #grid-single {
+		margin: 10px auto;
+		max-width: 900px;
+	}
+	#gridwriter, #homegrid {
+		grid-template-columns: repeat(3, 1fr);	
+	}
 
+	#gridwriter {
 		#gridarticle {
 			grid-column: 1/3;
 		}
 		#colophon {
 			grid-column: 1/3;
 		}
-	}	
+	}
+
+	#homegrid {
+		#gridarticle, #colophon {
+			grid-column: 1/4;
+		}
+	}
 }
 
