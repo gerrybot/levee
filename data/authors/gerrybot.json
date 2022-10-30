@@ -1,11 +1,11 @@
 {
-	"name": "Gerard McGarry",
-	"bio": "Gerard is a contributing writer for Interweb World",
-	"image": "path/to/avatar.jpg",
+	"name": "Gerry",
+	"bio": "Gerry is a contributing writer for The Levee Breaks",
+	"image": "img/gerrybot.jpg",
 	"social": {
-		"twitter": "interweb",
+		"twitter": "gerrybot",
 		"facebook": "",
 		"instagram": "",
-		"website": ""
+		"website": "https://gerardmcgarry.com"
 	}
 }

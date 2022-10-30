@@ -13,7 +13,16 @@
     {{ if isset .Params "author" }}
 
       {{ $author := index .Site.Data.authors .Params.author }}
-      {{ $author.bio}}
+      {{ if isset $author "image" }}
+        {{ $avatar := resources.Get $author.image }}
+        <img src="{{ $avatar.RelPermalink }}" title="{{ $author.name }}" alt="{{ $author.name }}" class="avatar" />
+      {{ end }}
+      <h3>{{ $author.name }}</h3>
+      <p>{{ $author.bio}}</p>
+
+      {{ if isset $author.social "twitter" }}
+      <p><a class="twitter-follow-button" href="https://twitter.com/{{ $author.social.twitter }}" data-size="large">Follow @{{ $author.social.twitter }}</a></p>
+      {{ end }}
 
     {{ else }}
       <p>Unknown</p>
@@ -25,9 +34,7 @@
   <h4>{{ i18n "recentPosts" }}</h4>
   <ul>
     {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
-      <li><a href="{{.RelPermalink}}">
-        {{.Title | markdownify }}
-      </a></li>
+      {{ .Render "card" }}
     {{ end }}
   </ul>
 </div>
