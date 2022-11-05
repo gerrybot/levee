@@ -1,0 +1,20 @@
+{{ if isset .Params "author" }}
+<div class="h-card entry-header">
+
+      {{ $author := index .Site.Data.authors .Params.author }}
+      {{ if isset $author "image" }}
+        {{ $avatar := resources.Get $author.image }}
+        <div class="hcard-avatar">
+          <img src="{{ $avatar.RelPermalink }}" title="{{ $author.name }}" alt="{{ $author.name }}" class="avatar u-photo" />
+        </div>
+      {{ end }}
+      <div class="hcard-bio">
+        <h3 class="p-name">{{ $author.name }}</h3>
+        <p>{{ $author.bio}}</p>
+
+        {{ if isset $author.social "twitter" }}
+        <p><a class="twitter-follow-button u-url" href="https://twitter.com/{{ $author.social.twitter }}" data-size="large">Follow @{{ $author.social.twitter }}</a></p>
+        {{ end }}
+      </div>
+</div>
+{{ end }}

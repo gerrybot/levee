@@ -1,6 +1,7 @@
 ---
 author: gerrybot
 date: 2022-03-10
+draft: true
 title: Walking in the Mournes
 categories: [Photography]
 tags: [Hugo,Netlify,Github]

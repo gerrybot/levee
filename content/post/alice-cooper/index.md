@@ -1,7 +1,7 @@
 ---
 author: gerrybot
 date: 2022-08-11
-draft: false
+draft: true
 title: Writing About Alice Cooper
 categories: [Music]
 tags: [Alice Cooper, Shock Rock]

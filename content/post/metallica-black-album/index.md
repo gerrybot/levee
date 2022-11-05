@@ -1,7 +1,7 @@
 ---
 author: gerrybot
 date: 2022-09-06
-draft: false
+draft: true
 title: How the Black Album changed Metallica for good
 categories: [Music]
 tags: [Metallica,Album Reviews]

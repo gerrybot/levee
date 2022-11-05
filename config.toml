@@ -9,7 +9,7 @@ googleAnalytics = "UA-149909314-2"
 
   [params.sidebar]
     # Optional about block for sidebar (can be Markdown)
-    about = "A place to talk about technology and things I'm distinctly passionate about. Static websites, fintech, AI, and much much more."
+    #about = "Bear with us - we're still trying to figure out what this site's about!"
 
     # How many posts to show on the sidebar (Default: 5)
     #num_recent_posts = 2
@@ -27,3 +27,6 @@ googleAnalytics = "UA-149909314-2"
     #facebook = true
     #linkedin = true
     #twitter = true
+
+  [permalinks]
+    post = "/:year/:month/:day/:title/"

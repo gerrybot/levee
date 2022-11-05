@@ -2,7 +2,7 @@
 title: 'Tom and Eileen'
 author: gerrybot
 date: 2022-08-11
-draft: false
+draft: true
 tags: [Abandoned Places, Countryside, Glenshesk, Memory, Northern Ireland, Stories]
 categories: [Life]
 featureimage: p8200028.jpg

@@ -175,7 +175,6 @@ h4, h5 {
   text-transform: uppercase;
   line-height: 1.5rem;
   margin-bottom: 0.8rem;
-  text-shadow: 0px 1px 0px #fff;
   color: #0190AF; }
 
 #content p {
@@ -190,8 +189,7 @@ h4, h5 {
   margin-bottom: 0.4em; }
 
 .sidebar {
-  color: #0190AF;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
+  color: #0190AF; }
   .sidebar h3 {
     color: #fff;
     border-bottom: 1px solid #666;
@@ -375,3 +373,17 @@ figcaption {
     grid-column: 1/3; }
   #homegrid #gridarticle, #homegrid #colophon {
     grid-column: 1/4; } }
+
+/* Author Display h-card */
+.h-card {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 1.5em !important;
+  padding: 0em 2em; }
+  .h-card .hcard-avatar {
+    flex-basis: 25%;
+    margin-right: 1em; }
+  .h-card .hcard-bio {
+    flex-basis: 75%; }
+    .h-card .hcard-bio h3 {
+      margin-top: 0; }

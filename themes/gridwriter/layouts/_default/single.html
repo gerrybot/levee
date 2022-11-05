@@ -17,16 +17,8 @@
     {{ .Content }}
 
     {{ partial "sharing-icons.html" . }}
-
-
-    {{ if isset .Params "author" }}
-
-    {{ $author := index .Site.Data.authors .Params.author }}
-    {{ $author.bio}}
-
-    {{ else }}
-      <p>Unknown</p>
-    {{ end }}
+    
+    {{ partial "author.html" . }}
 
   </article>
 

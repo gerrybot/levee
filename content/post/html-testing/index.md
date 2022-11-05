@@ -1,6 +1,7 @@
 ---
 author: "Interweb"
 date: 2019-09-10
+draft: true
 linktitle: I'm testing HTML elements with this theme
 title: Testing the HTML elements in the Typewriter theme
 categories: [
