@@ -3,7 +3,8 @@ languageCode = "en-us"
 title = "The Levee Breaks"
 theme = "gridwriter"
 
-googleAnalytics = "UA-149909314-2"
+# GA code overwritten to support GA4
+#googleAnalytics = "UA-149909314-2"
   # Custom header image
   featureimage = "img/typewriter.jpg"
 
