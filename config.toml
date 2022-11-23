@@ -8,6 +8,9 @@ theme = "gridwriter"
   # Custom header image
   featureimage = "img/typewriter.jpg"
 
+  [params]
+  strapline = "A shadowy flight into the dangerous world of a man...who does not exist"
+
   [params.sidebar]
     # Optional about block for sidebar (can be Markdown)
     #about = "Bear with us - we're still trying to figure out what this site's about!"

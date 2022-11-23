@@ -37,10 +37,6 @@
   <div id="gridwriter">
     <div id="gridarticle">
       <header id="branding" role="banner">
-      {{ if ( not .IsPage ) }}
-      {{ partial "brand.html" . }}
-      {{ end }}
-
       {{ if .Params.featureimage }}
       {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
       <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
@@ -53,10 +49,7 @@
       </div>
     </div>
     <div id="gridsidebar">
-      {{ if .IsPage }}
-        {{partial "brand.html" . }}
-      {{ end }}
-      {{ partial "sidebar.html" . }}
+      {{ partial "brand.html" . }}
       <p>Taxonomy Baseof</p>
     </div>
     <div id="gridfooter">

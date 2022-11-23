@@ -1,7 +1,7 @@
 {{ define "main" }}
 <h2>Journal</h2>
 <main class="card-flex">
-    {{ range first 9 (where .Site.Pages "Section" "post")  }}
+    {{ range first 18 (where .Site.Pages "Section" "post")  }}
 	    {{ .Render "card" }}
     {{ end }}
 </main>

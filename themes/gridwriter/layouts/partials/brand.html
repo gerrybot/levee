@@ -1,5 +1,18 @@
-<div id="thebrand">
-	<div class="block-layout">
+{{ if .IsHome }}
+	{{ .Scratch.Set "class" "wide" }}
+{{ else }}
+	{{ .Scratch.Set "class" "column" }}
+{{ end }}
+
+<div id="thebrand" class="{{ .Scratch.Get "class" }}">
+	<div class="the-logo">
+		{{ $logo := resources.Get "img/Levee-Logo.svg" }}
+		<a href="{{ .Site.BaseURL }}" rel="home"><img src="{{ $logo.RelPermalink }}" class="logo" alt="{{ .Site.Title }} logo" /></a>
+	</div>
+	<div class="the-title">
 		<h2><a href="{{ .Site.BaseURL }}" rel="home">{{ .Site.Title }}</a></h2>
+		{{ if .Site.Params.strapline }}
+		<p>{{ .Site.Params.strapline }}</p>
+		{{ end }}
 	</div>
 </div>
