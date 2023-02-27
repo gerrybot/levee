@@ -3,27 +3,32 @@
   {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
   {{ $machineDate := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 
-  <article itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/BlogPosting" class="blog-post">
-    <header class="entry-header">
-      <h1  itemprop="headline" class="entry-title">{{ .Title | markdownify }}</h1>
-      <div class="entry-meta">
-        <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name" rel="author">{{ .Params.author | default .Site.Params.author }}</span></span>
-        <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
-        <span><i class="fas fa-tags"></i> {{ if (.Params.categories) }}{{ partial "meta-categories.html" . }}{{ end }}
-        {{ if (.Params.tags) }}{{ partial "meta-tags.html" . }}{{ end }}</span>
-      </div>
-    </header>
-
-    {{ .Content }}
-
-    {{ partial "sharing-icons.html" . }}
-    
-    {{ partial "author.html" . }}
-
-  </article>
-
-  {{ if .Site.DisqusShortname }}
-    {{ partial "disqus.html" . }}
+{{ $original := .Page.Resources.GetMatch .Params.featureimage }}
+<header id="feature-image" role="banner">
+  {{ with $original }}
+  <image srcset="
+          {{ (.Resize "320x").RelPermalink }} 320w,
+          {{ (.Resize "640x").RelPermalink }} 640w,
+          {{ (.Resize "1200x").RelPermalink }} 2x" src="{{ (.Resize "600x").RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
   {{ end }}
+</header>
+
+<div class="boxout">
+  <h1  itemprop="headline" class="entry-title">{{ .Title | markdownify }}</h1>
+  <div class="entry-meta">
+    <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name" rel="author">{{ .Params.author | default .Site.Params.author }}</span></span>
+    <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
+    {{ if (.Params.categories) }}<span><i class="fas fa-folder-open"></i> {{ partial "meta-categories.html" . }}</span>{{ end }}
+    {{ if (.Params.tags) }}<span><i class="fas fa-tags"></i> {{ partial "meta-tags.html" . }}</span>{{ end }}
+  </div>
+</div>
+
+<div id="content">
+  {{ .Content }}
+
+  {{ partial "sharing-icons.html" . }}
+</div>
+
+{{ partial "author.html" . }}
 
 {{ end }}

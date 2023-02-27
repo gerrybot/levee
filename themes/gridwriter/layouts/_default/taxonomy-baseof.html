@@ -27,32 +27,24 @@
 
     {{ template "_internal/google_analytics_async.html" . }}
     {{ partial "head-custom.html" . }}
-
-    <script src="https://kit.fontawesome.com/f6a5e35c35.js"></script>
   </head>
 
 <body>
 
-<div style="margin:10px auto; max-width: 900px;">
-  <div id="gridwriter">
-    <div id="gridarticle">
-      <header id="branding" role="banner">
-      {{ if .Params.featureimage }}
-      {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
-      <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
-      {{ end }}
-      </header>
-      <div id="content">
+<div id="gridwriter">
+  <div id="gw-single">
+    <div id="gw-article">
+      <h1>The <strong>{{ .Page.Title }}</strong> Section</h1>
         {{ block "main" . }}
           <!-- The part of the page that begins to differ between templates -->
         {{ end }}
-      </div>
+
     </div>
     <div id="gridsidebar">
-      {{ partial "brand.html" . }}
+      {{partial "brand.html" . }}
       <p>Taxonomy Baseof</p>
     </div>
-    <div id="gridfooter">
+    <footer id="colophon">
       <p>
         {{ if .Site.Copyright }}
         {{ .Site.Copyright | markdownify }}
@@ -60,24 +52,8 @@
         Typewriter Theme for Hugo by <a href='https://gerardmcgarry.com'>Gerard McGarry</a>.
         {{ end }}
       </p>
-    </div>
+    </footer>
   </div>
 </div>
-
-  <div id="page">
-    <main>
-
-
-
-
-    </main>
-  </div>
-
-  <footer id="colophon" class="blog-footer row">
-    <div class="column">
-
-    </div>
-  </footer>
-
   </body>
 </html>

@@ -1,5 +1,5 @@
 {{ if isset .Params "author" }}
-<div class="h-card entry-header">
+<footer class="h-card boxout">
 
       {{ $author := index .Site.Data.authors .Params.author }}
       {{ if isset $author "image" }}
@@ -13,8 +13,22 @@
         <p>{{ $author.bio}}</p>
 
         {{ if isset $author.social "twitter" }}
-        <p><a class="twitter-follow-button u-url" href="https://twitter.com/{{ $author.social.twitter }}" data-size="large">Follow @{{ $author.social.twitter }}</a></p>
+          <a class="twitter-follow-button u-url" href="https://twitter.com/{{ $author.social.twitter }}" data-size="large">Follow @{{ $author.social.twitter }}</a>
         {{ end }}
+
+        <p>
+        {{ if isset $author.social "mastodon" }}
+          <span class="icon"><a href="{{ $author.social.mastodon }}" target="_blank" title="Follow me on Mastodon"><i class="fab fa-xl fa-mastodon"></i></a></span>
+        {{ end }}
+
+        {{ if isset $author.social "instagram" }}
+          <span class="icon"><a href="{{ $author.social.instagram }}" target="_blank" title="Follow me on Instagram"><i class="fa-xl fa-brands fa-square-instagram"></i></a></span>
+        {{ end }}
+
+        {{ if isset $author.social "website" }}
+          <span class="icon"><a href="{{ $author.social.website }}" target="_blank" title="Visit my website"><i class="fa-xl fa-solid fa-earth-europe"></i></a></span>
+        {{ end }}
+        </p>
       </div>
-</div>
+</footer>
 {{ end }}

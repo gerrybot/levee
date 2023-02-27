@@ -36,7 +36,6 @@
 <div style="margin:10px auto; max-width: 900px;">
   <div id="gridwriter">
     <div id="gridarticle">
-      <header id="branding" role="banner">
       {{ if ( not .IsPage ) }}
       {{ partial "brand.html" . }}
       {{ end }}
@@ -45,7 +44,6 @@
       {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
       <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
       {{ end }}
-      </header>
       <div id="content">
         {{ block "main" . }}
           <!-- The part of the page that begins to differ between templates -->

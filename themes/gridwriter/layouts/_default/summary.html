@@ -1,21 +1,26 @@
 {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 <!-- This is used in tag/category lists -->
-<div class="blog-card">
-  <a href="{{ .Permalink }}">
-    {{ if .Params.featureimage }}
-    {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
-    <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" caption="{{ safeHTML .Title }}">
+
+<article id="gw-article" itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/BlogPosting">
+  {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
+  <header id="feature-image" role="banner">
+    <a href="{{ .Permalink }}">
+    {{ with $original }}
+    <image srcset="
+            {{ (.Resize "320x").RelPermalink }} 320w,
+            {{ (.Resize "640x").RelPermalink }} 640w,
+            {{ (.Resize "1200x").RelPermalink }} 2x" src="{{ (.Resize "600x").RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
     {{ end }}
-  </a>
-  <div class="card-meta">
-    <h3>
-      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
-    </h3>
+    </a>
+  </header>
+  <div class="boxout">
+    <a href="{{ .Permalink }}">
+      <h1  itemprop="headline" class="entry-title">{{ .Title | markdownify }}</h1>
+    </a>
     <div class="entry-meta">
-        <div class="entry-meta">
-          <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name">{{ .Params.author | default .Site.Params.author }}</span></span>
-          <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
-        </div>
+      <span itemprop="creator" itemscope itemtype="https://schema.org/Person"><i class="fas fa-user"></i> <span itemprop="name" rel="author">{{ .Params.author | default .Site.Params.author }}</span></span>
+      <time itemprop="datePublished" datetime="{{ .Date }}"><i class="fas fa-calendar-week"> </i> {{ .Date.Format $dateFormat }}</time>
+      {{ if (.Params.tags) }}<span><i class="fas fa-tags"></i> {{ partial "meta-tags.html" . }}</span>{{ end }}
     </div>
   </div>
-</div>
+</article>

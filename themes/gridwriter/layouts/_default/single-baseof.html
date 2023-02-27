@@ -27,27 +27,17 @@
 
     {{ template "_internal/google_analytics_async.html" . }}
     {{ partial "head-custom.html" . }}
-
-    <script src="https://kit.fontawesome.com/f6a5e35c35.js"></script>
   </head>
 
 <body>
 
-<div id="grid-single">
-  <div id="gridwriter">
-    <div id="gridarticle">
-      <header id="branding" role="banner">
-      {{ if .Params.featureimage }}
-      {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
-      <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
+<div id="gridwriter">
+  <div id="gw-single">
+    <article id="gw-article" itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/BlogPosting">
+      {{ block "main" . }}
+        <!-- The part of the page that begins to differ between templates -->
       {{ end }}
-      </header>
-      <div id="content">
-        {{ block "main" . }}
-          <!-- The part of the page that begins to differ between templates -->
-        {{ end }}
-      </div>
-    </div>
+    </article>
     <div id="gridsidebar">
       {{ if .IsPage }}
         {{partial "brand.html" . }}

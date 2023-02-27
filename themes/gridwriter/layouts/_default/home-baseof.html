@@ -6,7 +6,7 @@
 
     <base href="{{ .Site.BaseURL }}">
     <link rel="canonical" href="{{ .Permalink }}">
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <title>{{ block "title" . }}{{ .Site.Title }} - {{ .Site.Params.strapline }}{{ end }}</title>
 
     {{ "<!-- Actual SCSS Output -->" | safeHTML }}
 
@@ -27,40 +27,29 @@
 
     {{ template "_internal/google_analytics_async.html" . }}
     {{ partial "head-custom.html" . }}
-
-    <script src="https://kit.fontawesome.com/f6a5e35c35.js"></script>
   </head>
 
 <body>
 
-<div id="homegrid">
-  <div id="gridarticle">
-    <header id="branding" role="banner">
-    {{ if ( not .IsPage ) }}
+<div id="gridwriter">
+  <div id="gw-home">
     {{ partial "brand.html" . }}
-    {{ end }}
-
-    {{ if .Params.featureimage }}
-    {{ $original := .Page.Resources.GetMatch .Params.featureimage }}
-    <image src="{{ $original.RelPermalink }}" alt="{{ safeHTML .Title }}" itemprop="photo" caption="{{ safeHTML .Title }}">
-    {{ end }}
-    </header>
     <div id="content">
       {{ block "main" . }}
         <!-- The part of the page that begins to differ between templates -->
       {{ end }}
     </div>
+    <div id="colophon">
+      <p>
+        {{ if .Site.Copyright }}
+        {{ .Site.Copyright | markdownify }}
+        {{ else }}
+        Typewriter Theme for Hugo by <a href='https://gerardmcgarry.com'>Gerard McGarry</a> - Home Baseof.
+        {{ end }}
+      </p>
+    </div>
   </div>
-  <div id="colophon">
-    <p>
-      {{ if .Site.Copyright }}
-      {{ .Site.Copyright | markdownify }}
-      {{ else }}
-      Typewriter Theme for Hugo by <a href='https://gerardmcgarry.com'>Gerard McGarry</a> - Home Baseof.
-      {{ end }}
-    </p>
-  </div>
-</div>
 
-  </body>
+</div>
+</body>
 </html>

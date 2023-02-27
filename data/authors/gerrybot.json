@@ -4,8 +4,9 @@
 	"image": "img/gerrybot.jpg",
 	"social": {
 		"twitter": "gerrybot",
+		"mastodon": "https://mastodon.ie/@gerrybot",
 		"facebook": "",
-		"instagram": "",
+		"instagram": "https://www.instagram.com/gerrybot/",
 		"website": "https://gerardmcgarry.com"
 	}
 }

@@ -9,7 +9,7 @@ theme = "gridwriter"
   featureimage = "img/typewriter.jpg"
 
   [params]
-  strapline = "A shadowy flight into the dangerous world of a man...who does not exist"
+  strapline = "An entertainment magazine covering essential TV, Movies and Music"
 
   [params.sidebar]
     # Optional about block for sidebar (can be Markdown)

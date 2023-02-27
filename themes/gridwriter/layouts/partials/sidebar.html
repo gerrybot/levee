@@ -1,40 +1,36 @@
-<div id="sidebar" class="sidebar">
-  
-  {{ if isset .Site.Params.sidebar "about" }}
-  <div class="block-layout">
-    <h4>{{ i18n "about" }}</h4>
-    <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
-  </div>
-  {{ end }}
-
-
-<!-- This can be deleted soon -->
-
+<nav id="sidebar" class="sidebar">
 
 {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
 <div class="block-layout">
   <h4>{{ i18n "recentPosts" }}</h4>
+  {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
+    {{ .Render "card" }}
+  {{ end }}
+</div>
+
+<div class="block-layout">
+  <h4>Sections</h4>
   <ul>
-    {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
-      {{ .Render "card" }}
+    {{ range .Site.Taxonomies.categories }}
+      <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
     {{ end }}
   </ul>
 </div>
 
-  {{ with .Site.Menus.sidebar }}
-  <div class="block-layout">
-    <h4>{{ i18n "links" }}</h4>
-    <ul>
-      {{ range . }}
-        <li><a href="{{ .URL | absURL }}">
-          {{ .Name }}
-        </a></li>
-      {{ end }}
-    </ul>
-  </div>
-  {{ end }}
+{{ with .Site.Menus.sidebar }}
+<div class="block-layout">
+  <h4>{{ i18n "links" }}</h4>
+  <ul>
+    {{ range . }}
+      <li><a href="{{ .URL | absURL }}">
+        {{ .Name }}
+      </a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
 
 <div class="block-layout">
   <p><a href="{{ .Permalink }}#">{{ i18n "backToTop" }}</a></p>
 </div>
-</div>
+</nav>
