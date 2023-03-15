@@ -24,7 +24,7 @@ Just when you think you've heard everything that the genre can throw at you, a b
 
 If the opening track is the appetiser, *Run* is where the album really hits its stride - starting with a rasping vocal and the snarled instruction to "Flee...coward", it evokes a paranoid chase to an epic climax with Gagneux's taunting' "Where's your fucking God?" 
 
-*Death To The Holy* kicks off with a deceptive, almost Kings Of Leon-inspired vocal, before taking a left turn into a pummelling metal refrain. What's good about this is that the band always exercises restraint when they need to. They never overplay their hand or get into ridiculous gimmicks. 
+*Death To The Holy* kicks off with a deceptive, almost Kings Of Leon-inspired vocal, before taking a left turn into a pummelling metal refrain. What's good about this is that the band always exercises restraint when they need to. They never overplay their hand or get into ridiculous gimmicks.
 
 *Golden Liar* retires the heavier sound for clean arpeggios and a countryesque sound punctuated by big drums as the song builds to its conclusion. The vocals are wistful, rich and deep, evoking classic Americana. *Bow* opts for a stripped back sound - a simple drumbeat overlaid with throbbing electronic buzz. This one has such an anthemic, cinematic quality - you can almost imaging it being used as the theme tune to an HBO series.
 
