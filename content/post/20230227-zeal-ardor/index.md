@@ -32,8 +32,6 @@ If the opening track is the appetiser, *Run* is where the album really hits its 
 
 Described by Metal Hammer as a '[covert activist, subversive satanist and genre-bending genius](https://www.loudersound.com/features/inside-the-mind-of-zeal-and-ardors-subversive-mastermind-manuel-gagneux)', Gagneux writes, performs all the instruments (with the exception of drums). If Zeal & Ardor can keep pushing out music as powerful and brilliantly crafted as this album, there's a glimmer of hope on the horizon for metal and a fresh infusion of new sounds and styles.
 
-
-
 ## Zeal & Ardor Track List
 
 1. Zeal & Ardor
