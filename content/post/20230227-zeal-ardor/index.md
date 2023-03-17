@@ -2,10 +2,10 @@
 author: gerrybot
 date: 2023-02-27
 draft: false
-title: "Zeal & Ardor album review: A perfect fusion of Americana and Black Metal"
-description: "Manuel Gagneux's third Zeal & Ardor album turns everything you knew about metal on its head."
+title: "Zeal &amp; Ardor album review: A perfect fusion of Americana and Black Metal"
+description: "Manuel Gagneux's third Zeal &amp; Ardor album turns everything you knew about metal on its head."
 categories: [Music]
-tags: [Metal, 'Zeal & Ardor']
+tags: [Metal, "Zeal &amp; Ardor"]
 featureimage: zeal-ardor-album-cover.jpg
 weight: 5
 ---
