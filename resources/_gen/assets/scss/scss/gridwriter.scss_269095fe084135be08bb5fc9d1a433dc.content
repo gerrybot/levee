@@ -371,10 +371,10 @@ figcaption {
   -o-border-radius: 0.5em;
   border-radius: 0.5em; }
   .blog-card .card-image {
-    height: 150px;
+    height: 180px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     -webkit-border-radius: 0.5em 0.5em 0 0;
     -moz-border-radius: 0.5em 0.5em 0 0;
     -ms-border-radius: 0.5em 0.5em 0 0;
@@ -397,6 +397,26 @@ figcaption {
   .entry-meta i {
     margin-right: .2em;
     color: #FDAF19; }
+
+.summary-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+  .summary-card .feature-image {
+    border-radius: 8px 0 0 8px;
+    min-height: 180px;
+    grid-column: 1/1;
+    background-size: cover;
+    background-position: center; }
+    .summary-card .feature-image a {
+      display: block;
+      height: 100%; }
+  .summary-card .meta-summary {
+    grid-column: 2/4; }
 
 /* Author Display h-card */
 .h-card {

@@ -17,10 +17,9 @@
         {{ end }}
 
         <p>
-        {{ if isset $author.social "mastodon" }}
-          <span class="icon"><a href="{{ $author.social.mastodon }}" target="_blank" title="Follow me on Mastodon"><i class="fab fa-xl fa-mastodon"></i></a></span>
+        {{ if isset $author.social "threads" }}
+          <span class="icon"><a href="https://www.threads.net/@{{ $author.social.threads }}" target="_blank" title="Follow me on Threads"><i class="fab fa-xl fa-threads"></i></a></span>
         {{ end }}
-
         {{ if isset $author.social "instagram" }}
           <span class="icon"><a href="{{ $author.social.instagram }}" target="_blank" title="Follow me on Instagram"><i class="fa-xl fa-brands fa-square-instagram"></i></a></span>
         {{ end }}
@@ -28,6 +27,10 @@
         {{ if isset $author.social "website" }}
           <span class="icon"><a href="{{ $author.social.website }}" target="_blank" title="Visit my website"><i class="fa-xl fa-solid fa-earth-europe"></i></a></span>
         {{ end }}
+        {{ if isset $author.social "mastodon" }}
+          <span class="icon"><a href="{{ $author.social.mastodon }}" target="_blank" title="Follow me on Mastodon"><i class="fab fa-xl fa-mastodon"></i></a></span>
+        {{ end }}
+
         </p>
       </div>
 </footer>

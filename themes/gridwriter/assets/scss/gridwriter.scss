@@ -380,10 +380,10 @@ figcaption {
 			box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	@include border-radius(.5em);
 	.card-image {
-		height:150px;
+		height:180px;
 		background-size: cover;
 		background-repeat: no-repeat;
-		background-position: center center;
+		background-position: center;
 		@include border-radius(.5em .5em 0 0);
 		a {
 			display:block;
@@ -408,6 +408,30 @@ figcaption {
 	i {
 		margin-right: .2em;
 		color: $primary-color;
+	}
+}
+
+.summary-card {
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+	margin: 1rem;
+	border-radius: 8px;
+	background-color: $white;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	.feature-image {
+		border-radius: 8px 0 0 8px ;
+		min-height: 180px;
+		grid-column: 1/1;
+		background-size:cover;
+		background-position: center;
+		a {
+			display: block;
+			height: 100%;
+		}
+	}
+	.meta-summary {
+		grid-column: 2/4;
 	}
 }
 
