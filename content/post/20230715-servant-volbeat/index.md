@@ -1,7 +1,7 @@
 ---
 author: gerrybot
 date: 2023-07-29
-draft: false
+draft: true
 title: "Volbeat: Servant Of The Mind"
 description: "Servant Of The Mind might be Danish rockers Volbeat's best album yet"
 categories: [Music]
@@ -14,17 +14,16 @@ weight: 5
 
 ## Servant Of The Mind Track List
 
-1. Zeal & Ardor
-2. Run
-3. Death To The Holy
-4. Emersion
-5. Golden Liar
-6. Erase
-7. Bow
-8. Feed The Machine
-9. I Caught You
-10. Church Burns
-11. Götterdämmerung
-12. Hold Your Head Low
-13. J-M-B
-14. A-H-I-L
+1. Temple of Ekur
+2. Wait a Minute My Girl
+3. The Sacred Stones
+4. Shotgun Blues
+5. The Devil Rages On
+6. Say No More
+7. Heaven’s Descent
+8. Dagen Før (feat. Stine Bramsen)
+9. The Passenger
+10. Step Into Light
+11. Becoming
+12. Mindlock
+13. Lasse’s Birgitta
