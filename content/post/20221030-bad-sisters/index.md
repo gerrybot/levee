@@ -12,7 +12,7 @@ weight: 5
 
 __Bad Sisters__ is the most deftly-written and darkest dramas to grace a streaming service this year. Picture the scene: four Irish sisters from Malahide in Ireland are at their wits' end with their vile, controlling brother-in-law, John Paul. So they decide to murder him. Seems reasonable so far, right?
 
-Okay, before we get too far into this review, let's meet our victim: John Paul Williamson. Know affectionately among his in-laws as "The Prick".
+Okay, before we get too far into this review, let's meet our victim: John Paul Williamson. Known affectionately among his in-laws as "The Prick".
 
 {{< image name="john-paul-bad-sisters.jpg" alt="John Paul (played by Claes Bang) in Bad Sisters" caption="Bad Sisters: Claes Bang as John Paul (aka The Prick)" >}}
 
