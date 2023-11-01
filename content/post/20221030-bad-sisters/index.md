@@ -2,7 +2,7 @@
 author: gerrybot
 date: 2022-10-30
 draft: false
-title: "You should be watching: Bad Sisters"
+title: "Apple TV's Bad Sisters: Getting rid of an obnoxious in-law has never been more fun"
 description: "Bad Sisters is a murderous new Apple TV drama starring Sharon Horgan, Eve Hewson and Claes Bang. Read our review here."
 categories: [Entertainment]
 tags: [TV, Reviews]
